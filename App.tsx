@@ -14,6 +14,7 @@ export default function App() {
       alert("Permission to access camera roll is required.");
         return;
     }
+    hoge = 1;
     let pickerResult = await ImagePicker.launchImageLibraryAsync();
     if (pickerResult.cancelled === true) {
       return;
@@ -36,7 +37,7 @@ export default function App() {
       <View style={styles.container}>
         <Image source={{uri: selectedImage.localUri}} style={styles.thumbnail} />
         <TouchableOpacity onPress={openShareDialogAsync} style={styles.button}>
-            <Text style={styles.buttonText}>Share this photo</Text>
+          <Text style={styles.buttonText}>Share this photo</Text>
         </TouchableOpacity>
       </View>
     );
@@ -46,11 +47,11 @@ export default function App() {
     <View style={styles.container}>
         <Image source={{uri: "https://i.imgur.com/TkIrScD.png"}} style={styles.logo} />
         <Text style={styles.instructions}>
-            Open up App.tsx to start working on your app! hello, world!
+          Open up App.tsx to start working on your app! hello, world!
         </Text>
       <StatusBar style="auto" />
       <TouchableOpacity onPress={openImagePickerAsync} style={styles.button}>
-          <Text style={styles.buttonText}>Pick a photo</Text>
+        <Text style={styles.buttonText}>Pick a photo</Text>
       </TouchableOpacity>
     </View>
   );
